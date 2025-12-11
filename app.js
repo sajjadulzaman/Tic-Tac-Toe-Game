@@ -23,5 +23,21 @@ boxs.forEach((box) => {
       box.innerText = 'X';
       trunO = true;
     }
+    box.disabled = true;
+    Checkwinner()
   })
 })
+const Checkwinner = () => {
+  for (let prattens of winPartterns) {
+    let val1 = boxs[prattens[0]].innerText;
+    let val2 = boxs[prattens[1]].innerText;
+    let val3 = boxs[prattens[2]].innerText;
+    if (val1 !=''&& val2!='' && val3!='') {
+      if (val1 === val2&& val2===val3) {
+        console.log('winner',val1);
+        
+      }
+    }
+  }
+
+}
