@@ -1,5 +1,8 @@
 const boxs = document.querySelectorAll(".box")
 const restBtn = document.getElementById('Reset-btn') 
+let newbtn = document.getElementById('new-btn')
+let msgContainer = document.getElementsByClassName('msg-container')
+let msg =document.querySelector('#msg')
 let trunO = true;
 // 2d array
 const winPartterns= [
@@ -27,6 +30,12 @@ boxs.forEach((box) => {
     Checkwinner()
   })
 })
+
+const showWinner = (winner) => {
+  msg.innerText = `Congratulations, Winner is ${winner}`;
+  msgContainer.classList.add('hidden') 
+
+}
 const Checkwinner = () => {
   for (let prattens of winPartterns) {
     let val1 = boxs[prattens[0]].innerText;
